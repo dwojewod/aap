@@ -1,7 +1,4 @@
-
 ---
-
-
-
-
-...
+- hosts: localhost
+  tasks:
+  - debug: msg=Minimal Test
