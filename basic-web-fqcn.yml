@@ -19,16 +19,16 @@
         - httpd        
         - firewalld    
         
-   - name: Open firewall access      
-     ansible.posix.firewalld:        
-       service: "{{ item }}"        
-       immediate: true        
-       permanent: true        
-       state: enabled      
-     loop:        
-       - http    
+    - name: Open firewall access      
+      ansible.posix.firewalld:        
+        service: "{{ item }}"        
+        immediate: true        
+        permanent: true        
+        state: enabled      
+      loop:        
+        - http    
        
-   - name: Configure simple index.html      
-     ansible.builtin.copy:        
-       content: "Hello world from {{ ansible_facts['fqdn'] }}.\n"        
-       dest: /var/www/html/index.html
+    - name: Configure simple index.html      
+      ansible.builtin.copy:        
+        content: "Hello world from {{ ansible_facts['fqdn'] }}.\n"        
+        dest: /var/www/html/index.html
