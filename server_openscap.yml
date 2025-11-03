@@ -1,6 +1,7 @@
 ---
 - name: Run openSCAP scan
-  hosts: "{{ _hosts | default(omit) }}"
+  #hosts: "{{ _hosts | default(omit) }}"
+  hosts: all
   become: true
   vars:
     policy_name: all
