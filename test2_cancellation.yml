@@ -1,8 +1,8 @@
 ---
 - name: Force Execution Environment container to run and pause
-  hosts: localhost 
-  connection: local
-  gather_facts: false
+  hosts: all
+  #connection: local
+  gather_facts: true
 
   tasks:
     - name: "Task 1: Wait for 5 minutes (Inside the EE container)"
