@@ -1,0 +1,11 @@
+---
+- name: Force Execution Environment container to run and pause
+  hosts: localhost # Użyj localhost, aby upewnić się, że to działa na hoście kontrolnym
+  connection: local
+  gather_facts: false
+
+  tasks:
+    - name: Task 1: Wait for 5 minutes (Inside the EE container)
+      ansible.builtin.pause:
+        minutes: 5 # Wystarczająco długo, aby spokojnie anulować
+        prompt: "EE container is running, now cancel the job in the AAP UI."
