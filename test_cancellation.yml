@@ -4,14 +4,14 @@
   gather_facts: false
 
   tasks:
-  - name: Task 1: Check connectivity
+  - name: Task 1 Check connectivity
     ansible.builtin.ping:
 
-  - name: Task 2: Intentionally delay the execution (simulating a long-running task)
+  - name: Task 2 Intentionally delay the execution (simulating a long-running task)
     ansible.builtin.shell:
       cmd: "sleep 300" # Opóźnienie na 5 minut (300 sekund)
       # Kontener Podman musi działać przez cały ten czas
       
-  - name: Task 3: Job should have been cancelled before reaching this
+  - name: Task 3 Job should have been cancelled before reaching this
     ansible.builtin.debug:
       msg: "This task should NOT be reached if cancellation was successful."
